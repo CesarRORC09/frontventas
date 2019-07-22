@@ -1,0 +1,81 @@
+<form action="">
+        <div class="row">
+                <div class="col-3">
+                    <div class="form-group">
+                        <label for="">Nombre</label>
+                        <input type="text" class="form-control" name="nombre" placeholder="Nombre" [(ngModel)]="usuario.nombre">
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form-group">
+                        <label for="">Apellido paterno</label>
+                        <input type="text" class="form-control" name="a_paterno" placeholder="Apellido paterno" [(ngModel)]="usuario.a_paterno">
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form-group">
+                        <label for="">Apellido materno</label>
+                        <input type="text" class="form-control" name="a_materno" placeholder="Apellido materno" [(ngModel)]="usuario.a_materno">
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form-group">
+                        <label for="">Edad</label>
+                        <input type="text" class="form-control" name="edad" placeholder="Edad" [(ngModel)]="usuario.edad">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="">Email</label>
+                        <input type="email" class="form-control" name="email" [(ngModel)]="usuario.email">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="">Username</label>
+                        <input type="text" class="form-control" name="username" [(ngModel)]="usuario.username">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="">Password</label>
+                        <input type="password" class="form-control" name="password" [(ngModel)]="usuario.password">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group ">
+                        <button type="button" (click)="guardar()" class="btn btn-success ">Guardar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Apellido paterno</th>
+                                <th>Apellido materno</th>
+                                <th>edad</th>
+                                <th>Email</th>
+                                <th>Username</th>
+                                <th>Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let i of usuarios">
+                                <td>{{i.nombre}}</td>
+                                <td>{{i.a_paterno}}</td>
+                                <td>{{i.a_paterno}}</td>
+                                <td>{{i.edad}}</td>
+                                <td>{{i.email}}</td>
+                                <td>{{i.username}}</td>
+                                <td>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+</form>

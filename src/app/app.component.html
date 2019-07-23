@@ -1,4 +1,17 @@
-<div class="container bg">
-  <router-outlet></router-outlet>
-</div>
+<header>
+    <ul>
+        <li><a [routerLink]="['/home']" [routerLinkActive]="['actived']">Iniciar sesion</a></li>
+        <li><a [routerLink]="['/productos']" [routerLinkActive]="['actived']">Productos</a></li>
+        <li id="logo"><a href="" [routerLinkActive]="['actived']">CR</a></li>
+        <li><a [routerLink]="['/contacto']" [routerLinkActive]="['actived']">Contacto</a></li>
+        
+        
+    </ul>
+</header>
+
+<section id=content>
+    <router-outlet></router-outlet>
+</section>
+
+<footer >Master en Js</footer>
 

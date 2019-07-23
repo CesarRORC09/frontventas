@@ -1,0 +1,16 @@
+<div class="container" *ngIf="producto">
+    <div class="image" *ngIf="producto.img">
+            <img src="{{url+'getImgProducto/'+producto.img}}">
+    </div>
+    <div class="data">
+            <h1>{{producto.nombre}}</h1>
+            <h3>{{producto.marca}}</h3>
+            <p>{{producto.descripcion}}</p>
+            <p>{{producto.precio}}</p>
+            <p>{{producto.status}}</p>
+            <p>
+                <a class="btn btn-success" (click)="addCarrito(producto.id)">Agregar a carrito</a>
+            </p>
+    </div>
+    
+</div>

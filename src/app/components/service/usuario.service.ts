@@ -13,8 +13,8 @@ export class UsuarioService {
 
   httpOptions ={
     headers: new HttpHeaders({
-      'Content-Type':'application/json',
-      'Authorization':localStorage.getItem("token")
+      'Content-Type':'application/json'
+     //-para aurotizacion por medio del token- 'Authorization':localStorage.getItem("token")
     })
   }
   constructor(
@@ -23,9 +23,10 @@ export class UsuarioService {
 
   guardar(usuario: Usuario): Observable<any>{
     let params=JSON.stringify(usuario);
-    
-
     return this._http.post(this.url+'saveCliente',params,this.httpOptions);
+  }
+  buscar(id):Observable<any>{
+    return this._http.get(this.url+'getCliente/'+id,this.httpOptions);
   }
   listar(): Observable<any>{
     
@@ -34,5 +35,12 @@ export class UsuarioService {
   }
   login(usuario):Observable<any>{
      return this._http.post(`${this.url}login`,usuario);
+  }
+  eliminar(id):Observable<any>{
+    return this._http.delete(this.url+'deleteCliente/'+id,this.httpOptions);
+  }
+  editar(usuario):Observable<any>{
+    var params=JSON.stringify(usuario);
+    return this._http.put(this.url+'updateCliente/'+usuario._id,params,this.httpOptions);
   }
 }

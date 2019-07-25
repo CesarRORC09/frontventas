@@ -8,15 +8,18 @@ import { AppComponent } from './app.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { DetalleComponent } from './components/detalle/detalle.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { HomeComponent } from './components/home/home.component';
+import { CarritoComponent } from './components/carrito/carrito.component';
 
 export const appRoutes: Routes = [
     { path: 'usuario', component: UsuarioComponent },
     { path: 'producto',component:  ProductoComponent},
-    { path: 'home',component:  LoginComponent},
+    { path: 'home',component:  HomeComponent},
     { path: 'productos',component:  ProductosComponent},
     { path: 'contacto',component:  ContactoComponent},
-    { path: 'home',component:  LoginComponent},
-    { path: 'getProducto/:id',component:  DetalleComponent},
+    { path: 'login',component:  LoginComponent},
+    { path: 'carrito',component:  CarritoComponent},
+    { path: 'detalleProducto/:id',component:  DetalleComponent},
     { path: '**', component: LoginComponent }
     
   ];

@@ -28,7 +28,7 @@ export class DetalleComponent implements OnInit {
   buscar(id){
     this._pS.buscar(id).subscribe(reg=>{
       console.log(reg);
-      this.producto=reg.producto;
+      this.producto=reg;
     },err=>{
       console.log(err)
     })

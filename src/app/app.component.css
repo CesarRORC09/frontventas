@@ -2,10 +2,12 @@
 header{
     display: block;
     width: 100%;
-    height: 90px;
-    background: rgba(53,103,164,0.8 );
+    height: 50px;
     position: fixed;
     text-transform: uppercase;
+}
+header .navbar{
+    height: 100%;
 }
 header ul{
     display: block;
@@ -18,7 +20,7 @@ header ul li{
     display: inline-block;
     margin:0px auto;
     text-align: center;
-    line-height: 90px;
+    line-height: inherit;
 }
 header a{
     display: block;
@@ -33,11 +35,11 @@ header a{
     border-radius: 5px;
 }
 header a:hover {
-    background: rgba(39, 50, 110, 0.8);
+    background: rgba(126, 127, 133, 0.5);
 
 }
 .actived{
-    background: rgba(39, 50, 110, 0.4);
+    background: rgba(77, 78, 82, 1);
 }
 #logo{
     font-family: "finger";

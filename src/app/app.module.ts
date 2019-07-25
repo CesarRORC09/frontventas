@@ -20,6 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductosComponent } from './components/productos/productos.component';
 import { DetalleComponent } from './components/detalle/detalle.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { HomeComponent } from './components/home/home.component';
+import { CarritoComponent } from './components/carrito/carrito.component';
 
 
 @NgModule({
@@ -35,7 +37,11 @@ import { ContactoComponent } from './components/contacto/contacto.component';
   
     DetalleComponent,
   
-    ContactoComponent
+    ContactoComponent,
+  
+    HomeComponent,
+  
+    CarritoComponent
   ],
   imports: [
     BrowserModule,

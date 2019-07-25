@@ -2,7 +2,7 @@
     <h2>Productos</h2>
         <ul>
             <li class="producto" *ngFor="let producto of productos">
-                <a [routerLink]="['/getProducto',producto._id]">
+                <a [routerLink]="['/detalleProducto',producto._id]">
                         <div class="image">
                             <img src="{{url+'getImgProducto/'+producto.img}}" *ngIf="producto.img">
                         </div>

@@ -1,7 +1,8 @@
 
 
 .form-container{
-    position: absolute;
+    margin-top: 5%;
+    position: fixed;
     top: 15vh;
     background: #fff;
     padding: 30px;

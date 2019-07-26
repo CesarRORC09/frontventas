@@ -33,5 +33,8 @@ export class DetalleComponent implements OnInit {
       console.log(err)
     })
   }
+  addCarrito(id){
+    
+  }
 
 }

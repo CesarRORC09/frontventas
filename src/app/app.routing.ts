@@ -10,6 +10,8 @@ import { DetalleComponent } from './components/detalle/detalle.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { HomeComponent } from './components/home/home.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
+import { RegistroComponent } from './components/registro/registro.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 export const appRoutes: Routes = [
     { path: 'usuario', component: UsuarioComponent },
@@ -20,7 +22,9 @@ export const appRoutes: Routes = [
     { path: 'login',component:  LoginComponent},
     { path: 'carrito',component:  CarritoComponent},
     { path: 'detalleProducto/:id',component:  DetalleComponent},
-    { path: '**', component: LoginComponent }
+    {path: 'registro', component:RegistroComponent},
+    {path: 'perfil', component:PerfilComponent},
+    { path: '**', component: HomeComponent }
     
   ];
   

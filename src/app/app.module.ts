@@ -22,6 +22,9 @@ import { DetalleComponent } from './components/detalle/detalle.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { HomeComponent } from './components/home/home.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { RegistroComponent } from './components/registro/registro.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 
 @NgModule({
@@ -41,7 +44,15 @@ import { CarritoComponent } from './components/carrito/carrito.component';
   
     HomeComponent,
   
-    CarritoComponent
+    CarritoComponent,
+  
+    NavbarComponent,
+  
+    RegistroComponent,
+  
+    PerfilComponent,
+  
+    
   ],
   imports: [
     BrowserModule,

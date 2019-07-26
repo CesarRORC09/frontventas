@@ -7,23 +7,32 @@
     </div>
     
 </div> -->
-<h2>Iniciar sesion</h2>
-<section class="container-fluid bg" >
-    <section class="row justify-content-center">
-        <section class="col-12 col-sm-6 col-md-3">
-            <form action="" class="form-container">
-                <div class="form-group">
-                    <label for="">Usuario</label>
-                    <input type="text" class="form-control" name="username"  placeholder="Usuario" [(ngModel)]="usuario.username">
-                </div>
-                <div class="form-group">
-                    <label for="">Password</label>
-                    <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="usuario.password">
-                </div>
-                <div class="col">
-                    <button class="btn btn-primary btn-block" (click)="ingresar()">Ingresar</button>
-                </div>
-            </form>
-        </section>
-    </section>
-</section>
+<section id="login" class="mb-5 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+          <div class="card_login">
+            <div class="card">
+              <div class="card-body text-center">
+                <form >
+                  <h1 class="h3 mb-3 font-weight-normal">Inicio de sesion</h1>
+                 
+                  
+                  <div class="form-group">
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+                  </div>
+                  <div class="form-group">
+                    <input  type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+                  </div>
+                  <button type="submit" class="btn btn-lg btn-primary btn-block">Entrar</button>
+                  <div class="form-group">
+                    <a routerLink="#" class="form-control login-user">Eres nuevo ?</a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

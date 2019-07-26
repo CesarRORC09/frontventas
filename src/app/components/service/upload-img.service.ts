@@ -30,5 +30,5 @@ export class UploadImgService {
         xhr.open('POST',url,true);
         xhr.send(formData);
     });
-}
+    }
 }

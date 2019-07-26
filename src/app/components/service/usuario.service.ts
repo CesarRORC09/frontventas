@@ -13,8 +13,8 @@ export class UsuarioService {
 
   httpOptions ={
     headers: new HttpHeaders({
-      'Content-Type':'application/json'
-     //-para aurotizacion por medio del token- 'Authorization':localStorage.getItem("token")
+      'Content-Type':'application/json',
+     'Authorization':localStorage.getItem("token")
     })
   }
   constructor(

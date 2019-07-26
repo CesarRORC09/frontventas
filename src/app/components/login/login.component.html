@@ -19,14 +19,14 @@
                  
                   
                   <div class="form-group">
-                    <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+                    <input type="email" id="email" name="email" class="form-control" [(ngModel)]="usuario.email" placeholder="Email" required>
                   </div>
                   <div class="form-group">
-                    <input  type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+                    <input  type="password" id="password" name="password" class="form-control" [(ngModel)]="usuario.password" placeholder="Password" required>
                   </div>
-                  <button type="submit" class="btn btn-lg btn-primary btn-block">Entrar</button>
+                  <button type="button" class="btn btn-lg btn-primary btn-block" (click)="ingresar()">Entrar</button>
                   <div class="form-group">
-                    <a routerLink="#" class="form-control login-user">Eres nuevo ?</a>
+                    <a routerLink="/registro" class="form-control login-user">Eres nuevo ?</a>
                   </div>
                 </form>
               </div>

@@ -8,9 +8,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  
+  public userStatus:string;
   usuario={
-    username:"",
+    email:"",
     password:""
   }
   constructor(
@@ -22,13 +22,15 @@ export class LoginComponent implements OnInit {
   }
 
   ingresar(){
+    console.log(this.usuario)
     this._us.login(this.usuario).subscribe(
     datos=>{
      
       if(datos.ok){
         console.log(datos);
         localStorage.setItem("token",datos.token);
-        this.router.navigate(["usuario"]);
+        this.router.navigate(["perfil/"+datos.cliente._id]);
+
       }else{
         alert(datos.mensaje)
       }

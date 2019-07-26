@@ -23,7 +23,7 @@ export const appRoutes: Routes = [
     { path: 'carrito',component:  CarritoComponent},
     { path: 'detalleProducto/:id',component:  DetalleComponent},
     {path: 'registro', component:RegistroComponent},
-    {path: 'perfil', component:PerfilComponent},
+    {path: 'perfil/:id', component:PerfilComponent},
     { path: '**', component: HomeComponent }
     
   ];

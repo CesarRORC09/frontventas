@@ -29,4 +29,8 @@ export class VentaService {
     let params=JSON.stringify(venta);
     return this._http.post(this.url+'saveVenta',params,this.httpOptions);
    }
+
+   buscarVenta(id):Observable<any>{
+     return this._http.get(this.url+'getVenta/'+id,this.httpOptions);
+   }
 }

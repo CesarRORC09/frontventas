@@ -16,7 +16,7 @@ import { VentaComponent } from './venta/venta.component';
 
 export const appRoutes: Routes = [
     { path: 'usuario', component: UsuarioComponent },
-    { path: 'venta', component: VentaComponent },
+    { path: 'venta/:id', component: VentaComponent },
     { path: 'producto',component:  ProductoComponent},
     { path: 'home',component:  HomeComponent},
     { path: 'productos',component:  ProductosComponent},

@@ -78,6 +78,9 @@ export class CarritoComponent implements OnInit {
     
   }
   eliminar(j){
+    let resta=0;
+    resta-=this.carrito[j].cantidad;
+    this.total-resta;
     this.carrito.splice(j,1);
   }
 

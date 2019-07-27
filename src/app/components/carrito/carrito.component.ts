@@ -4,6 +4,7 @@ import { ProductoService } from '../service/producto.service';
 import { UsuarioService } from '../service/usuario.service';
 import { Usuario } from 'src/app/model/usuario';
 import { VentaService } from '../service/venta.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -25,7 +26,7 @@ export class CarritoComponent implements OnInit {
     total:0
   }
 
-  constructor(private _pS:ProductoService,private _uS:UsuarioService,private _vS:VentaService) { }
+  constructor(private _pS:ProductoService,private _uS:UsuarioService,private _vS:VentaService,private _router:Router) { }
 
   public id=localStorage.getItem("id");
   ngOnInit() {
@@ -66,11 +67,15 @@ export class CarritoComponent implements OnInit {
     this.agregar();
     console.log(this.venta);
     this._vS.guardar(this.venta).subscribe((reg)=>{
+      if(reg){
         console.log(reg)
-        alert("compra existosa");
+          alert("compra existosa");
+          this._router.navigate(["venta/"+reg._id]);
+      }  
     },(err)=>{
       console.log(err)
     });
+    
   }
   eliminar(j){
     this.carrito.splice(j,1);

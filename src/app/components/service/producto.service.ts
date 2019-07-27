@@ -10,12 +10,18 @@ import { Venta } from 'src/app/model/venta';
   providedIn: 'root'
 })
 export class ProductoService {
+  public carrito:Array<any>=[];
 
   public url=Global.url;
-  httpOptions={
-    headers:new HttpHeaders({
+  httpOptionsAuth ={
+    headers: new HttpHeaders({
+      'Content-Type':'application/json',
+     'Authorization':localStorage.getItem("token")
+    })
+  }
+  httpOptions ={
+    headers: new HttpHeaders({
       'Content-Type':'application/json'
-     //-para aurotizacion por medio del token- 'Authorization':localStorage.getItem("token")
     })
   }
   constructor(private _http:HttpClient) { }
@@ -41,4 +47,13 @@ export class ProductoService {
     var params=JSON.stringify(producto);
     return this._http.put(this.url+'updateProducto/'+producto._id,params,this.httpOptions);
   }
+  agregarProducto(producto:Producto,cantidad){
+    console.log("servicio",producto,cantidad);
+      this.carrito.push({producto,cantidad});
+      console.log("servicio",this.carrito);
+   }
+  mostrarCarrito():Array<any>{
+    return this.carrito;
+  }
+  
  }

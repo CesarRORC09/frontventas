@@ -6,9 +6,8 @@
     <div class="col-12">
         <div class="row">
             <div class="col-6">
-                <div class="form-group">
-                    <label for="">Cliente</label>
-                    <select name="" id="" class="form-control"></select>
+                <div class="form-group" *ngIf="usuario">
+                    <label for="">{{usuario.nombre}} {{usuario.a_paterno}} {{usuario.a_materno}}</label>
                 </div>
             </div>
             <div class="col-6">
@@ -31,19 +30,31 @@
                         </tr>
                     </thead>
                     <tbody>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                        <tr *ngFor="let i of carrito">
+                            <th>{{i.producto.nombre}}</th>
+                            <th>{{i.cantidad}}</th>
+                            <th>{{i.producto.precio}}</th>
+                            <th> <button class="btn btn-danger" (click)="eliminar(i._id)">Quitar</button> </th>
+                            <th>{{(i.cantidad * i.producto.precio)}}</th>
+                        </tr>
                     </tbody>
                     <thead>
                         <tr>
-                            <th colspan="3"></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th colspan="3">Total: {{total}}</th>
                         </tr>
                     </thead>
                 </table>
             </div>
+            
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="form-group " >
+            <button type="button" (click)="comprar()" class="btn btn-success ">Comprar</button>
         </div>
     </div>
 </div>

@@ -13,8 +13,8 @@
                 <p>Estatus: {{producto.status}}</p>
                 <p>
                     <label for="">Cantidad</label>
-                    <input type="number" style="width: 50px" >
-                    <a class="btn btn-warning" (click)="addCarrito(producto.id)">Agregar a carrito</a>
+                    <input type="number" style="width: 50px" [(ngModel)]="cantidad">
+                    <a class="btn btn-warning" (click)="addCarrito()">Agregar a carrito</a>
                 </p>
         </div>
     </div>

@@ -10,24 +10,27 @@
                   <h1 class="h3 mb-3 font-weight-normal">Register</h1>
                   
                   <div class="form-group">
-                    <input type="email" name="email" class="form-control" placeholder="Email" [(ngModel)]="email" required minlength="8">
+                    <input type="email" name="email" class="form-control" placeholder="Email" [(ngModel)]="usuario.email" required minlength="8">
                   </div>
                  
                   <div class="form-group">
-                    <input type="text" name="username" class="form-control" placeholder="Username" [(ngModel)]="username" required minlength="5"
+                    <input type="text" name="username" class="form-control" placeholder="Username" [(ngModel)]="usuario.username" required minlength="5"
                       maxlength="10">
                   </div>
                   <div class="form-group">
-                    <input type="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="password" required minlength="5">
+                    <input type="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="usuario.password" required minlength="5">
                   </div>
                   <div class="form-group">
-                    <input type="text" name="a_paterno" class="form-control" placeholder="Apellido paterno" [(ngModel)]="a_paterno" required>
+                      <input type="text" name="nombre" class="form-control" placeholder="Nombre(s)" [(ngModel)]="usuario.nombre" required>
+                    </div>
+                  <div class="form-group">
+                    <input type="text" name="a_paterno" class="form-control" placeholder="Apellido paterno" [(ngModel)]="usuario.a_paterno" required>
                   </div>
                   <div class="form-group">
-                        <input type="text" name="a_materno" class="form-control" placeholder="Apellido materno" [(ngModel)]="a_materno" required>
+                        <input type="text" name="a_materno" class="form-control" placeholder="Apellido materno" [(ngModel)]="usuario.a_materno" required>
                       </div>
                       <div class="form-group">
-                            <input type="number" name="edad" class="form-control" placeholder="Edad" [(ngModel)]="edad" required >
+                            <input type="number" name="edad" class="form-control" placeholder="Edad" [(ngModel)]="usuario.edad" required >
                           </div>
                 
                   <div class="form-group" >

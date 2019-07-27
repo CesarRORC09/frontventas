@@ -10,13 +10,20 @@ import { Observable } from 'rxjs';
 export class UsuarioService {
 
   public url = Global.url;
+  public estado:boolean=this.onLogin();
 
-  httpOptions ={
+  httpOptionsAuth ={
     headers: new HttpHeaders({
       'Content-Type':'application/json',
      'Authorization':localStorage.getItem("token")
     })
   }
+  httpOptions ={
+    headers: new HttpHeaders({
+      'Content-Type':'application/json'
+    })
+  }
+  
   constructor(
     private _http : HttpClient
   ) { }
@@ -28,6 +35,9 @@ export class UsuarioService {
   buscar(id):Observable<any>{
     return this._http.get(this.url+'getCliente/'+id,this.httpOptions);
   }
+  buscarPerfil(id):Observable<any>{
+    return this._http.get(this.url+'getCliente/'+id,this.httpOptionsAuth);
+  }
   listar(): Observable<any>{
     
 
@@ -35,6 +45,18 @@ export class UsuarioService {
   }
   login(usuario):Observable<any>{
      return this._http.post(`${this.url}login`,usuario);
+
+  }
+  logout():void{
+    localStorage.removeItem("token");
+    localStorage.removeItem("expiresIn");
+    localStorage.removeItem("id");
+    localStorage.removeItem("estado")
+  }
+  onLogin():boolean{
+    if(localStorage.getItem("token")){
+      return true;
+    }
   }
   eliminar(id):Observable<any>{
     return this._http.delete(this.url+'deleteCliente/'+id,this.httpOptions);

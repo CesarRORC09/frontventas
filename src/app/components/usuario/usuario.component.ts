@@ -13,7 +13,7 @@ import {Router,ActivatedRoute,Params} from '@angular/router';
 export class UsuarioComponent implements OnInit {
   
   
-  
+   
   usuario:Usuario={
     nombre:"",
     a_paterno:"",

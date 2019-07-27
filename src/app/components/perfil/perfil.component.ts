@@ -15,17 +15,29 @@ export class PerfilComponent implements OnInit {
 
   ngOnInit() {
     this._route.params.subscribe(reg=>{
-      let i=reg.id;
-      this.buscar(i);
+      console.log("xx",reg)
+      let id=reg.id;
+      console.log(id);
+      this.buscarPerfil(id);
+      console.log(localStorage);
+      this.comprobarlog()
     })
   }
-  buscar(id){
+  buscarPerfil(id:any){
     this._uS.buscar(id).subscribe(reg=>{
       console.log(reg);
-      this.usuario=reg;
+      this.usuario=reg.cliente;
+      console.log('xxx',this.usuario)
     },err=>{
       console.log(err)
     })
   }
+  comprobarlog(){
+    if(localStorage){
+      return true;
+    }
+  }
+
+  
 
 }

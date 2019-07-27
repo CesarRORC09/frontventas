@@ -1,5 +1,16 @@
-<section class="container">
+<section class="container" *ngIf="usuario">
+     <div class="row">
+        <div class="col-5">
+            <h2>Bienvenido {{usuario.username}} !</h2>
+        </div>
+    </div>
     <div class="row">
-        {{usuario.nombre}}
+        <div class="col-6">
+            <ul>
+                <li>Email: {{usuario.email}}</li>
+                <li>Nombre: {{usuario.nombre}} {{usuario.a_paterno}} {{usuario.a_materno}}</li>
+            </ul>
+            <p>Inicia tus comprar revisando nuestros  <a routerLink="/productos">productos</a></p>
+        </div>
     </div>
 </section>

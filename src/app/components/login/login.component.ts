@@ -29,7 +29,15 @@ export class LoginComponent implements OnInit {
       if(datos.ok){
         console.log(datos);
         localStorage.setItem("token",datos.token);
-        this.router.navigate(["perfil/"+datos.cliente._id]);
+        localStorage.setItem("expiresIn",datos.expiresIn);
+        localStorage.setItem("id",datos.cliente._id);
+        localStorage.setItem("estado","true");
+        
+        this.router.navigate(["perfil/"+datos.cliente._id]).then(()=>{
+          window.location.reload();
+        });
+        
+       
 
       }else{
         alert(datos.mensaje)

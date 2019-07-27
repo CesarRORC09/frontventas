@@ -12,7 +12,9 @@ import{Global} from '../service/global'
 })
 export class DetalleComponent implements OnInit {
   public producto:Producto;
+  public cantidad:number;
   public url:string;
+  
 
   constructor(private _pS:ProductoService,private _router:Router,
     private _route:ActivatedRoute) { 
@@ -21,9 +23,10 @@ export class DetalleComponent implements OnInit {
 
   ngOnInit() {
     this._route.params.subscribe(reg=>{
-      let i=reg.id;
+      var i=reg.id;
       this.buscar(i);
-    })
+    });
+
   }
   buscar(id){
     this._pS.buscar(id).subscribe(reg=>{
@@ -33,7 +36,9 @@ export class DetalleComponent implements OnInit {
       console.log(err)
     })
   }
-  addCarrito(id){
+  addCarrito(){
+    
+    this._pS.agregarProducto(this.producto,this.cantidad);
     
   }
 

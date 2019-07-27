@@ -39,6 +39,7 @@ export class DetalleComponent implements OnInit {
   addCarrito(){
     
     this._pS.agregarProducto(this.producto,this.cantidad);
+    alert("se ha agregado "+this.cantidad+" "+this.producto.nombre+" al carrito");
     
   }
 

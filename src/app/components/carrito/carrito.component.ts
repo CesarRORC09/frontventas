@@ -3,6 +3,7 @@ import { Producto } from 'src/app/model/producto';
 import { ProductoService } from '../service/producto.service';
 import { UsuarioService } from '../service/usuario.service';
 import { Usuario } from 'src/app/model/usuario';
+import { VentaService } from '../service/venta.service';
 
 
 @Component({
@@ -13,17 +14,26 @@ import { Usuario } from 'src/app/model/usuario';
 export class CarritoComponent implements OnInit {
   public usuario:Usuario;
   
+  
 
   productos:Array<Producto>=[];
   public carrito:Array<any>=this._pS.mostrarCarrito();
   public total:number;
+  venta={
+    cliente:"",
+    productos:[],
+    total:0
+  }
 
-  constructor(private _pS:ProductoService,private _uS:UsuarioService) { }
+  constructor(private _pS:ProductoService,private _uS:UsuarioService,private _vS:VentaService) { }
 
+  public id=localStorage.getItem("id");
   ngOnInit() {
     console.log("carrito-component",this.carrito);
-    let id=localStorage.getItem("id");
-    this.buscarUsr(id);
+    
+    this.buscarUsr(this.id);
+    this.total=this.sumar();
+    console.log(this.total)
   }
   buscarUsr(id){
     this._uS.buscarPerfil(id).subscribe(
@@ -36,18 +46,34 @@ export class CarritoComponent implements OnInit {
         console.log("no se encontro");
       }
     );
-    this.total=this.sumar();
-    console.log(this.total)
+  
   }
   sumar():number{
     let i=0;
-    let x=0;
+    let total=0;
     for( i=0;i<this.carrito.length;i++){
-      x+=Number((this.carrito[i].cantidad)*(this.carrito[i].producto.precio));
+      total+=Number((this.carrito[i].cantidad)*(this.carrito[i].producto.precio));
     }
-    return x;
+    return total;   
+  }
+  agregar(){
+    this.venta.cliente=this.id;
+    this.venta.productos=this.carrito;
+    this.venta.total=this.total
+  }
 
-    
+  guardarVenta(){
+    this.agregar();
+    console.log(this.venta);
+    this._vS.guardar(this.venta).subscribe((reg)=>{
+        console.log(reg)
+        alert("compra existosa");
+    },(err)=>{
+      console.log(err)
+    });
+  }
+  eliminar(j){
+    this.carrito.splice(j,1);
   }
 
 

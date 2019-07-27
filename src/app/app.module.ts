@@ -25,6 +25,7 @@ import { CarritoComponent } from './components/carrito/carrito.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
+import { VentaComponent } from './venta/venta.component';
 
 
 @NgModule({
@@ -51,6 +52,8 @@ import { PerfilComponent } from './components/perfil/perfil.component';
     RegistroComponent,
   
     PerfilComponent,
+  
+    VentaComponent,
   
     
   ],

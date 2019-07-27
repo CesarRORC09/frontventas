@@ -30,11 +30,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let i of carrito">
+                        <tr *ngFor="let i of carrito; let j = index">
                             <th>{{i.producto.nombre}}</th>
                             <th>{{i.cantidad}}</th>
                             <th>{{i.producto.precio}}</th>
-                            <th> <button class="btn btn-danger" (click)="eliminar(i._id)">Quitar</button> </th>
+                            <th> <button class="btn btn-danger" (click)="eliminar(j)">Quitar</button> </th>
                             <th>{{(i.cantidad * i.producto.precio)}}</th>
                         </tr>
                     </tbody>
@@ -54,7 +54,7 @@
     </div>
     <div class="col-12">
         <div class="form-group " >
-            <button type="button" (click)="comprar()" class="btn btn-success ">Comprar</button>
+            <button type="button" (click)="guardarVenta()" class="btn btn-success ">Comprar</button>
         </div>
     </div>
 </div>
